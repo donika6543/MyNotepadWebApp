@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Notepad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    
+    <aside class="side">
+      <div class="brand"><div class="dot"></div>Noter</div>
+      <p class="muted">Works offline on your device.</p>
+
+      
+      <div class="login-box" id="loginBox">
+        <div id="authForm">
+          <label><strong>Username</strong></label>
+          <input id="username" placeholder="username" />
+          <label style="margin-top:8px"><strong>Password</strong></label>
+          <input id="password" type="password" placeholder="password" />
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button id="loginBtn" class="side-btn">Log in</button>
+            <button id="signupBtn" class="side-btn alt">Sign up</button>
+          </div>
+        </div>
+
+        <div id="loggedIn" class="hidden">
+          <div class="login-info">
+            <div>
+              <div id="who" style="font-weight:700"></div>
+              <div style="font-size:13px;opacity:0.9">Signed in</div>
+            </div>
+            <button id="logoutBtn" class="side-btn alt">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tips">
+        <div class="tips-title">Tips</div>
+        <ul>
+          <li>Use search to filter notes</li>
+          <li>Notes are private to each user</li>
+          <li>Data stays in your browser (localStorage)</li>
+        </ul>
+      </div>
+    </aside>
+
+    
+    <main class="main">
+      <header>
+        <h1>My Notepad</h1>
+        <div class="search">
+          <input id="searchInput" placeholder="Search notes..." />
+        </div>
+        <div class="actions">
+          <button id="newNoteToggle" class="btn ghost">New Note</button>
+          <button id="exportBtn" class="btn">Export</button>
+        </div>
+      </header>
+
+    
+      <section class="note-form hidden" id="noteForm">
+        <label><strong>Title</strong></label>
+        <input id="noteTitle" placeholder="Note title" />
+        <label style="margin-top:8px"><strong>Content</strong></label>
+        <textarea id="noteContent" rows="4" placeholder="Write something..." style="resize:vertical"></textarea>
+        <div class="note-footer">
+          <div style="flex:1">
+            <label><strong>Date</strong></label>
+            <input id="noteDate" type="date" />
+          </div>
+          <div class="form-buttons">
+            <button id="saveNoteBtn" class="btn">Save</button>
+            <button id="cancelNoteBtn" class="btn ghost">Cancel</button>
+          </div>
+        </div>
+      </section>
+
+    
+      <section id="notesList" class="note-grid"></section>
+
+      
+      <div class="footer">
+        <span id="notesCount">0 notes</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

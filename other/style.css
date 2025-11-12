@@ -1,0 +1,114 @@
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,#f6f9fc,#ffffff);
+  color:#0f172a;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.app{
+  width:100%;
+  max-width:1100px;
+  background:linear-gradient(180deg,#9f3c9d,#fbfdff);
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.08);
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:320px 1fr;
+  min-height:640px;
+}
+@media (max-width:800px){
+  .app{grid-template-columns:1fr;min-height:720px}
+  .side{order:2}
+  .main{order:1}
+}
+
+
+.side{
+  padding:20px;
+  background:linear-gradient(180deg,#9309c5,#ee12f1);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.brand{font-weight:700;font-size:20px;display:flex;align-items:center;gap:10px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:#d61bf3}
+.muted{opacity:0.95}
+
+/* --- LOGIN --- */
+.login-box{background:rgba(255,255,255,0.12);padding:12px;border-radius:10px}
+.login-box input{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);margin-top:8px}
+.side-btn{
+  flex:1;padding:8px;border-radius:8px;border:none;
+  background:rgba(255,255,255,0.18);
+  color:rgb(64,233,248);
+  font-weight:600;cursor:pointer;
+}
+.side-btn.alt{background:rgba(255,255,255,0.12);color:white}
+.login-info{display:flex;align-items:center;justify-content:space-between}
+.tips{margin-top:auto;font-size:13px;opacity:0.95}
+.tips ul{margin-top:8px;line-height:1.6}
+.tips-title{font-weight:600}
+
+
+.main{padding:22px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+header h1{font-size:20px}
+.search{flex:1;display:flex;gap:8px;align-items:center}
+.search input{width:100%;padding:10px;border-radius:10px;border:1px solid #a410e9}
+.actions{display:flex;gap:8px}
+.btn{
+  padding:10px 12px;border-radius:10px;border:none;
+  background:#0f172a;color:rgb(225,114,233);
+  font-weight:600;cursor:pointer;
+}
+.btn.ghost{background:transparent;border:1px solid #a61f82;color:#0f172a}
+
+.note-form{
+  background:#e88383;border-radius:12px;padding:14px;
+  box-shadow:0 3px 10px rgba(15,23,42,0.06);margin-bottom:16px;
+}
+.note-form input,.note-form textarea{
+  width:100%;padding:8px;margin-top:8px;border-radius:8px;border:1px solid #9ccaf7;
+}
+.note-footer{display:flex;gap:8px;margin-top:8px;align-items:center}
+.form-buttons{display:flex;flex-direction:column;gap:8px}
+
+
+.note-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+
+
+.note{
+  background:linear-gradient(180deg,#f7e845,#d8e20c);
+  border-radius:10px;padding:12px;
+  box-shadow:0 4px 12px rgba(15,23,42,0.04);
+  border:1px solid #eef6ff;
+  display:flex;flex-direction:column;gap:8px;
+}
+.note h3{font-size:15px}
+.note p{font-size:14px;color:#334155}
+.note .meta{
+  margin-top:auto;display:flex;
+  align-items:center;justify-content:space-between;
+  font-size:13px;color:#64748b;
+}
+.note .meta button{
+  border:none;background:transparent;color:#ef4444;
+  cursor:pointer;font-weight:700;
+}
+
+
+.footer{margin-top:14px;font-size:13px;color:#475569}
+ 
+.hidden{display:none}
+@media (max-width:500px){
+  header h1{font-size:18px}
+  .side{padding:14px}
+  .btn{padding:8px 10px}
+}
