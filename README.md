@@ -46,7 +46,6 @@ MyNotepad/
 
 ## Future Enhancements
 
-- Search and filter notes
 - Tagging or categorization
 - Dark/Light mode toggle
 - Responsive UI improvements
